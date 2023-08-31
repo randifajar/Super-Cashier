@@ -12,11 +12,12 @@ Adapun fitur atau kebutuhan yang diperlukan untuk sistem kasir ini adalah:
   2. Memasukkan nama item, jumlah item, dan harga barang.
   3. Memperbarui nama item.
   4. Memperbarui jumlah item.
-  5. Menghapus item.
-  6. Membatalkan (me-reset) semua item.
-  7. Mengecek item.
-  8. Menghitung total belanja.
-  9. Menghitung diskon.
+  5. Memperbarui harga item.
+  6. Menghapus item.
+  7. Membatalkan (me-reset) semua item.
+  8. Mengecek item.
+  9. Menghitung total belanja.
+  10. Menghitung diskon.
 
 ## Flowchart
 ![Flowchart](https://github.com/randifajar/Super-Cashier/assets/46032161/fff48e7d-8df7-476b-bfd7-6f3b7eaa1e63)
