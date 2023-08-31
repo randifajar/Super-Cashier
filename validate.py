@@ -71,3 +71,20 @@ def validate_harga(text):
         else:
             break
     return harga_per_item
+
+
+def validate_delete(nama_item):
+    while True:
+        try:
+            val = input(
+                f"Apakah anda yakin ingin menghapus {nama_item}? (y/n): ")
+            if not val:
+                raise ValueError
+            elif val != "y":
+                if val != "n":
+                    raise ValueError
+        except ValueError:
+            print(f"Input hanya 'y' atau 'n' dan tidak boleh kosong\n")
+        else:
+            break
+    return val

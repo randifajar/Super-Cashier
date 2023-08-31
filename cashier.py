@@ -4,7 +4,7 @@ Class dan Function untuk menjalankan fitur cashier yang ada
 """
 
 from tabulate import tabulate
-from input import validate_name, validate_harga, validate_jumlah
+from validate import validate_name, validate_harga, validate_jumlah, validate_delete
 
 
 class Transaction:
@@ -87,11 +87,14 @@ class Transaction:
         # Fungsi untuk menghapus satu item di dictionary items
         nama_item = validate_name(
             self.items, cek_list=True, text="Masukkan Nama Item")
-        self.items.pop(nama_item)
+        if validate_delete(nama_item) == "y":
+            self.items.pop(nama_item)
 
     def reset_transaction(self):
         # Fungsi untuk mereset atau menghapus semua item di dictionary items
-        self.items.clear()
+        nama_item = "Semua Item"
+        if validate_delete(nama_item) == "y":
+            self.items.clear()
 
     def total_price(self):
         # Fungsi untuk menghitung dan menampilkan total belanja, diskon, dan total bayar
