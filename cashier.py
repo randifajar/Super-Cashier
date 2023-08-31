@@ -1,4 +1,5 @@
 from tabulate import tabulate
+from input import validate_name, validate_harga, validate_jumlah
 
 
 class Transaction:
@@ -40,39 +41,44 @@ class Transaction:
         print(tabulate(data, headers=['Nama', 'Jumlah', 'Harga', 'Total']))
 
     def add_item(self):
-        nama_item = input("Nama item: ")
-        jumlah_item = int(input("Jumlah item: "))
-        harga_per_item = int(input("Harga per item: "))
+        nama_item = validate_name(
+            self.items, cek_list=False, text="Masukkan Nama Item")
+        jumlah_item = validate_jumlah(text="Masukkan Jumlah Item")
+        harga_per_item = validate_harga(text="Masukkan Harga Item")
         self.items[nama_item] = [jumlah_item,
                                  harga_per_item, jumlah_item * harga_per_item]
 
     def update_item_name(self):
-        nama_item = input("Nama item yang ingin diganti: ")
-        update_nama_item = input("Nama item baru: ")
+        nama_item = validate_name(
+            self.items, cek_list=True, text="Masukkan Nama Item")
+        update_nama_item = validate_name(
+            self.add_item, cek_list=False, text="Masukkan Nama Item Baru")
         self.items[update_nama_item] = self.items.pop(nama_item)
 
     def update_item_qty(self):
-        nama_item = input("Nama item yang ingin diganti: ")
-        update_jumlah_item = int(input("Jumlah item baru: "))
+        nama_item = validate_name(
+            self.items, cek_list=True, text="Masukkan Nama Item")
+        update_jumlah_item = validate_jumlah(text="Masukkan Jumlah Item Baru")
         self.items[nama_item][0] = update_jumlah_item
         self.items[nama_item][2] = update_jumlah_item * \
             self.items[nama_item][1]
 
     def update_item_price(self):
-        nama_item = input("Nama item yang ingin diganti: ")
-        update_harga_item = int(input("Harga per item baru: "))
+        nama_item = validate_name(
+            self.items, cek_list=True, text="Masukkan Nama Item")
+        update_harga_item = validate_harga(text="Masukkan Harga Item Baru")
         self.items[nama_item][1] = update_harga_item
         self.items[nama_item][2] = update_harga_item * self.items[nama_item][0]
 
     def delete_item(self):
-        nama_item = input("Nama item yang ingin dihapus: ")
+        nama_item = validate_name(
+            self.items, cek_list=True, text="Masukkan Nama Item")
         self.items.pop(nama_item)
 
     def reset_transaction(self):
         self.items.clear()
 
     def total_price(self):
-        hitung_total = True
         discount = 0
         total = 0
 
@@ -100,5 +106,5 @@ class Transaction:
         print(f"\n========== ========== ========== ========== ==========\n")
         print(f"Diskon yang diperoleh: {discount}")
         print(f"\n========== ========== ========== ========== ==========\n")
-        print(f"Total Bayar: {total - discount}")
+        print(f"Total Bayar: {total - discount} <--------------------")
         print(f"\n========== ========== ========== ========== ==========\n")
