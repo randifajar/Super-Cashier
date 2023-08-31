@@ -57,7 +57,7 @@ def validate_harga(text):
     # Fungsi untuk input dan validasi harga
     while True:
         try:
-            harga_per_item = int(input(f"{text}: "))
+            harga_per_item = int(input(f"{text}: Rp "))
             if not harga_per_item:
                 raise ValueError
             elif type(harga_per_item) != int:

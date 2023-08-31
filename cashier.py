@@ -102,7 +102,7 @@ class Transaction:
         for keys, _ in self.items.items():
             total += int(self.items[keys][2])
 
-        print(f"Total Belanja: {total}")
+        print(f"Total Belanja: Rp {total}")
         print(f"\n========== ========== ========== ========== ==========\n")
 
         # Menghitung diskon
@@ -123,7 +123,7 @@ class Transaction:
 
         # Menampilkan dan menghitung total bayar
         print(f"\n========== ========== ========== ========== ==========\n")
-        print(f"Diskon yang diperoleh: {discount}")
+        print(f"Diskon yang diperoleh: Rp {discount}")
         print(f"\n========== ========== ========== ========== ==========\n")
-        print(f"Total Bayar: {total - discount} <--------------------")
+        print(f"Total Bayar: Rp {total - discount} <--------------------")
         print(f"\n========== ========== ========== ========== ==========\n")
