@@ -74,6 +74,7 @@ def validate_harga(text):
 
 
 def validate_delete(nama_item):
+    # Fungsi untuk memvalidasi user apakah yakin untuk menghapus item
     while True:
         try:
             val = input(
