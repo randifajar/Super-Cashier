@@ -1,9 +1,31 @@
+# Super Cashier - Randi Fajar Wicaksono
+"""
+Python Project Super Cashier.
+Tampilan awal untuk menampilkan menu utama dan sub-menu.
+
+Fitur Menu Utama:
+    1. Buat Transaksi
+    2. Keluar Program
+
+Fitur Sub-Menu:
+    1. Tambah Item
+    2. Update Nama Item
+    3. Update Jumlah Item
+    4. Update Harga Item
+    5. Hapus Satu Item
+    6. Hapus Semua Item
+    7. Hitung Total Bayar
+    8. Kembali ke Menu Utama
+"""
+
 import os
 import cashier
 
 
 def menu():
+    # Menampilkan menu utama pada console
     while True:
+        # Membersihkan console dan menampilkan menu
         os.system('cls')
         print(f"========== ========== ========== ========== ==========\n")
         print(f"                    Super Cashier")
@@ -11,7 +33,11 @@ def menu():
         print(f"1. Buat Transaksi")
         print(f"0. Keluar")
         print(f"\n========== ========== ========== ========== ==========\n")
+
+        # Input pilihan user
         pilihan = int(input("Masukkan Pilihan: "))
+
+        # Case sesuai pilihan user
         match pilihan:
             case 1:
                 trnsct_123 = cashier.Transaction()
@@ -26,8 +52,10 @@ def menu():
 
 
 def submenu(trnsct_123):
+    # Menampilkan sub-menu pada console
     case_7 = False
     while True:
+        # Membersihkan console dan menampilkan menu
         os.system('cls')
         print(f"========== ========== ========== ========== ==========\n")
         print(f"                    Super Cashier")
@@ -45,7 +73,11 @@ def submenu(trnsct_123):
         print(f"7. Hitung Total Bayar")
         print(f"0. Kembali")
         print(f"\n========== ========== ========== ========== ==========\n")
+
+        # Input pilihan user
         pilihan = int(input("Masukkan Pilihan: "))
+
+        # Case sesuai pilihan user
         match pilihan:
             case 1:
                 trnsct_123.add_item()

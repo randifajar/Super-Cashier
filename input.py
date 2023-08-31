@@ -1,4 +1,11 @@
+# Super Cashier - Randi Fajar Wicaksono
+"""
+Class dan Function untuk input dan validasi input dari user
+"""
+
+
 def check_name(items, nama_item):
+    # Mencari nama atau keys dari user pada dictionary items
     cek = False
     for keys in items.keys():
         if keys == nama_item:
@@ -8,6 +15,7 @@ def check_name(items, nama_item):
 
 
 def validate_name(items, cek_list, text):
+    # Fungsi untuk input dan validasi nama
     while True:
         try:
             nama_item = input(f"{text}: ")
@@ -26,6 +34,7 @@ def validate_name(items, cek_list, text):
 
 
 def validate_jumlah(text):
+    # Fungsi untuk input dan validasi jumlah
     while True:
         try:
             jumlah_item = int(input(f"{text}: "))
@@ -45,6 +54,7 @@ def validate_jumlah(text):
 
 
 def validate_harga(text):
+    # Fungsi untuk input dan validasi harga
     while True:
         try:
             harga_per_item = int(input(f"{text}: "))
